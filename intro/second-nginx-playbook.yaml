@@ -1,0 +1,15 @@
+---
+- name: Install Apache2
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: Ensures that nginx is not installed
+      apt:
+        name: nginx
+        state: absent
+
+    - name: Ensures that apache is installed
+      apt:
+        name: apache2
+        state: present

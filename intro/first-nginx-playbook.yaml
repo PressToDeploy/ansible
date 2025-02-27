@@ -1,0 +1,10 @@
+---
+- name: Install nginx
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: Ensures that nginx is installed
+      apt:
+        name: nginx
+        state: present
